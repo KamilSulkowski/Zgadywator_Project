@@ -9,7 +9,7 @@ public class Zgadywator
 
     public static void Main()
     {
-        static int playerDec;
+        int playerDec;
         Console.WriteLine("\nZGADYWATOR");
         Console.WriteLine("Wybierz opcję:");
         Console.WriteLine("1. Graj w zgadywator!");
@@ -38,7 +38,33 @@ public class Zgadywator
 
     public static void playGame()
     {
+        genANum();
+        Console.WriteLine("\nWitaj w Zgadywatorze!");
+        Console.WriteLine("Liczba została wygenerowa.\nZgadnij liczbę od 1 do 100.\n");
+        while (true)
+        {
 
+            Console.Write("Wpisz swoją liczbę: ");
+            try
+            {
+                playerNumber = Convert.ToInt32(Console.ReadLine());
+            }
+            catch
+            {
+                Console.WriteLine("Błąd! Wpisz liczbę od 1 do 100");
+            }
+            attempt++;
+
+            toLow();
+            toHigh();
+            equal();
+            if (playerNumber == genNumber)
+            {
+                congratulation();
+                break;
+            }
+
+        }
     }
 
     public static void genANum()
