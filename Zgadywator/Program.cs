@@ -1,5 +1,6 @@
-﻿using System.Diagnostics;
-using System.Security.Cryptography;
+﻿using System;
+using System.Diagnostics;
+using System.IO;
 
 public class Zgadywator
 {
@@ -7,6 +8,9 @@ public class Zgadywator
     static int genNumber = 0;
     static int attempt = 0;
     static Stopwatch stopwatch = new Stopwatch();
+
+    static GameStats gameStats = new GameStats();
+
     public static void Main()
     {
         int playerDec;
