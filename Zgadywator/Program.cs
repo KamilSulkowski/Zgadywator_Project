@@ -9,7 +9,31 @@ public class Zgadywator
 
     public static void Main()
     {
+        static int playerDec;
+        Console.WriteLine("\nZGADYWATOR");
+        Console.WriteLine("Wybierz opcję:");
+        Console.WriteLine("1. Graj w zgadywator!");
+        Console.WriteLine("2. Sprawdź wyniki");
+        Console.WriteLine("3. Wyjdź");
+        Console.Write("Twój wybór: ");
+        if (int.TryParse(Console.ReadLine(), out playerDec))
+        {
+            switch (playerDec)
+            {
+                case 1:
+                    playGame();
+                    break;
+                case 2:
 
+                    break;
+                case 3:
+                    Console.WriteLine("Dzięki za gre");
+                    return;
+                default:
+                    Console.WriteLine("Niepoprawny wybór. Spróbuj ponownie.");
+                    break;
+            }
+        }
     }
 
     public static void playGame()
