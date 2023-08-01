@@ -6,7 +6,7 @@ public class Zgadywator
     static int playerNumber = 0;
     static int genNumber = 0;
     static int attempt = 0;
-
+    static Stopwatch stopwatch = new Stopwatch();
     public static void Main()
     {
         int playerDec;
@@ -41,6 +41,10 @@ public class Zgadywator
         genANum();
         Console.WriteLine("\nWitaj w Zgadywatorze!");
         Console.WriteLine("Liczba została wygenerowa.\nZgadnij liczbę od 1 do 100.\n");
+
+        stopwatch.Reset();
+        stopwatch.Start();
+
         while (true)
         {
 
@@ -102,6 +106,7 @@ public class Zgadywator
         Console.WriteLine("Gratulację wygrałeś");
         Console.WriteLine($"Odgadnięta liczba: {genNumber}");
         Console.WriteLine($"Liczba prób: {attempt}");
+        Console.WriteLine($"Czas: {stopwatch.Elapsed}\n");
     }
 }
  
